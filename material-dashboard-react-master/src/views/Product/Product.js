@@ -2,108 +2,194 @@ import React from "react";
 import Favorite from "@material-ui/icons/Favorite";
 import Button from "components/CustomButtons/Button.js";
 
+import InputGroup from 'react-bootstrap/InputGroup'
+
+import Icon from "@material-ui/core/Icon";
+
+import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "components/Grid/GridContainer.js";
+import CustomInput from "components/CustomInput/CustomInput.js";
+
+import Card from "components/Card/Card.js";
+import CardHeader from "components/Card/CardHeader.js";
+import CardAvatar from "components/Card/CardAvatar.js";
+import CardBody from "components/Card/CardBody.js";
+import CardFooter from "components/Card/CardFooter.js";
+
+
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import FormControl from 'react-bootstrap/FormControl';
+
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 //core components
 import Snackbar from "components/Snackbar/Snackbar.js";
 
 // core components
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
+import producte from "assets/img/faces/valla.jpg";
 
-import Card from "components/Card/Card.js";
+import { makeStyles } from "@material-ui/core/styles";
+
+import Quote from "components/Typography/Quote.js";
+import Muted from "components/Typography/Muted.js";
+import Primary from "components/Typography/Primary.js";
+import Info from "components/Typography/Info.js";
+import Success from "components/Typography/Success.js";
+import Warning from "components/Typography/Warning.js";
+import Danger from "components/Typography/Danger.js";
+
+
+
+const styles = {
+  typo: {
+    paddingLeft: "25%",
+    marginBottom: "40px",
+    position: "relative"
+  },
+  note: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    bottom: "10px",
+    color: "#c0c1c2",
+    display: "block",
+    fontWeight: "400",
+    fontSize: "13px",
+    lineHeight: "13px",
+    left: "0",
+    marginLeft: "20px",
+    position: "absolute",
+    width: "260px"
+  },
+  cardCategoryWhite: {
+    color: "rgba(255,255,255,.62)",
+    margin: "0",
+    fontSize: "14px",
+    marginTop: "0",
+    marginBottom: "0"
+  },
+  cardTitleWhite: {
+    color: "#FFFFFF",
+    marginTop: "0px",
+    minHeight: "auto",
+    fontWeight: "300",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    marginBottom: "3px",
+    textDecoration: "none"
+  }
+};
+
+const useStyles = makeStyles(styles);
 
 
 export default function UserProfile() {
-    const [open, setOpen] = React.useState(false);
-    const [place, setPlace] = React.useState("tl");
-    const [color, setColor] = React.useState("info");
-    const showNotification = () => {
-      if (open === false) {
-        var rand = Math.floor(Math.random() * 5 + 1);
-        var newColor;
-        switch (rand) {
-          case 1:
-            newColor = "info";
-            break;
-          case 2:
-            newColor = "success";
-            break;
-          case 3:
-            newColor = "warning";
-            break;
-          case 4:
-            newColor = "danger";
-            break;
-          case 5:
-            newColor = "primary";
-            break;
-          default:
-            break;
-        }
-        rand = Math.floor(Math.random() * 6 + 1);
-        var newPlace;
-        switch (rand) {
-          case 1:
-            newPlace = "tl";
-            break;
-          case 2:
-            newPlace = "tc";
-            break;
-          case 3:
-            newPlace = "tr";
-            break;
-          case 4:
-            newPlace = "bl";
-            break;
-          case 5:
-            newPlace = "bc";
-            break;
-          case 6:
-            newPlace = "br";
-            break;
-          default:
-            break;
-        }
-        setPlace(newPlace);
-        setColor(newColor);
-        setOpen(true);
-        setTimeout(function() {
-          setOpen(false);
-        }, 10000);
-      }
-    };
-    return (
-        <div>
-            <GridContainer fluid>
-                <GridItem /*style={{width:"50%"}}*/ xs={12} sm={12} md={5}>
-                    <Card>
-                        <div>
-                            HOLA CARACOLA  {" "}
-                            <Button justIcon round color="danger" onClick={() => showNotification()}><Favorite /></Button>
-                            <Snackbar
-                                place={place}
-                                color={color}
-                                icon={AddAlert}
-                                message="Has añadido a favoritos este producto."
-                                open={open}
-                                closeNotification={() => setOpen(false)}
-                                close
-                            />
-                        </div>
-                    </Card>
-                </GridItem>
-                <GridItem /*style={{width:"50%"}}*/ xs={12} sm={12} md={5}>
-                    <Card>
-                        <div>
-                            HOLA PEPSICOLA
-            </div>
-                    </Card>
-                </GridItem>
-            </GridContainer>
-        </div>
+  const [qtt, setQtt] = React.useState(1);
 
-    );
+  const [open, setOpen] = React.useState(false);
+  const [likeProduct, setLikeProduct] = React.useState(false);
+  const [place, setPlace] = React.useState("bc");
+  const [color, setColor] = React.useState("info");
+  const [message, setMessage] = React.useState("Has afegit a preferits el producte.");
+  const showNotification = () => {
+    if (open === false && likeProduct === false) {
+      var newColor = "success";
+      var newPlace = "bc";
+
+      setPlace(newPlace);
+      setColor(newColor);
+      setOpen(true);
+      setLikeProduct(true);
+      setTimeout(function () {
+        setOpen(false);
+      }, 5000);
+    }
+    else if (open === false && likeProduct === true) {
+      newColor = "warning";
+      newPlace = "bc";
+
+      setMessage("Has retirat de preferits el producte.")
+      setPlace(newPlace);
+      setColor(newColor);
+      setOpen(true);
+      setLikeProduct(false);
+      setTimeout(function () {
+        setOpen(false);
+      }, 5000);
+    }
+  };
+
+  const minusOneProduct = () => {
+    if (qtt >= 1) {
+      var actual = qtt - 1;
+      setQtt(actual);
+    }
+  };
+
+  const addOneProduct = () => {
+
+    var actual = qtt + 1;
+    setQtt(actual);
+
+  };
+
+  const classes = useStyles();
+  return (
+    <div>
+      <GridContainer fluid>
+        <GridItem /*style={{width:"50%"}}*/ xs={12} sm={12} md={5}>
+          <Card>
+            <div style={{ textAlign: "center" }}>
+              {/* CAL CENTRAR LA IMATGE!!!  */}
+              <img style={{ width: "70%" }} src={producte} alt="fence product" />
+            </div>
+          </Card>
+        </GridItem>
+        <GridItem /*style={{width:"50%"}}*/ xs={12} sm={12} md={5}>
+          <Card>
+            <div style={{ margin: "20px" }}>
+              <div>
+                <h3 style={{ fontWeight: "bold", textAlign: "center", marginBottom: "30px" }}>Valla de fusta classica 120 x 210 {"\n"}</h3>
+                <div>
+                  <span style={{ color: "red", fontSize: "xxx-large" }}>30,99€ </span>
+                  <span style={{ color: "grey" }}>SENSE IVA: 25,67€</span><br></br><br></br>
+                </div>
+              </div>
+
+              <div style={{ fontWeight: "bold" }}>
+
+                <span>Enviament:</span> <span style={{ color: "red" }}> 15,50€</span><br></br>
+                <span>Marca:</span> <br></br>
+                <span>Models disponibles:</span> <br></br>
+                <span style={{ float: "left", }}>Quantitat: </span>
+                <span style={{ float: "left", cursor: "pointer" }} class="material-icons" onClick={() => addOneProduct()}>add_box</span>
+                <div style={{ float: "left", marginLeft:"10px", marginRight:"10px"}}>{qtt}</div>
+                <span style={{ cursor: "pointer" }} class="material-icons" onClick={() => minusOneProduct()}>indeterminate_check_box</span>
+
+              </div>
+              <div style={{ textAlign: "center" }}>
+
+                <Button justIcon round color="danger" onClick={() => showNotification()}><Favorite /></Button>
+                <Snackbar
+                  place={place}
+                  color={color}
+                  icon={AddAlert}
+                  message={message}
+                  open={open}
+                  closeNotification={() => setOpen(false)}
+                  close
+                />
+
+                <Button color="info" round><span class="material-icons">shopping_cart</span> Afegir al carret</Button>
+
+                <Button color="warning" round><span class="material-icons">done</span> Comprar </Button>
+              </div>
+
+            </div>
+          </Card>
+        </GridItem>
+      </GridContainer>
+    </div>
+
+  );
 
 }
 
