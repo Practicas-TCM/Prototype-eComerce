@@ -16,6 +16,7 @@
 
 */
 // @material-ui/icons
+import Product from "views/Product/Product.js"
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
@@ -43,6 +44,13 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
+    layout: "/admin"
+  },
+  {
+    path: "/product", // url
+    name: "Product", // titol
+    icon: "", // icono
+    component: Product, // 
     layout: "/admin"
   },
   {
