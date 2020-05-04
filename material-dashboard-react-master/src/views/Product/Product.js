@@ -12,25 +12,7 @@ import Snackbar from "components/Snackbar/Snackbar.js";
 import producte from "assets/img/faces/valla.jpg";
 import { makeStyles } from "@material-ui/core/styles";
 
-import InputGroup from 'react-bootstrap/InputGroup'
-import Radio from "@material-ui/core/Radio";
-import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
-import Icon from "@material-ui/core/Icon";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import FormControl from 'react-bootstrap/FormControl';
-import Quote from "components/Typography/Quote.js";
-import Muted from "components/Typography/Muted.js";
-import Primary from "components/Typography/Primary.js";
-import Info from "components/Typography/Info.js";
-import Success from "components/Typography/Success.js";
-import Warning from "components/Typography/Warning.js";
-import Danger from "components/Typography/Danger.js";
+
 
 const styles = {
   typo: {
