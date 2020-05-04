@@ -71,7 +71,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function UserProfile() {
+export default function Product() {
   const [qtt, setQtt] = React.useState(1);
 
   const [open, setOpen] = React.useState(false);

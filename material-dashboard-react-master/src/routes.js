@@ -27,7 +27,8 @@ import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
-import Product from "views/Product/Product.js"
+import Product from "views/Product/Product.js" 
+import LogIn from "views/LogIn/LogIn.js" 
 import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
@@ -53,6 +54,13 @@ const dashboardRoutes = [
     icon: "", // icono
     component: Product, // 
     layout: "/admin"
+  },
+  {
+    path: "/logIn", // url 
+    name: "Log In", // titol
+    icon: "", // icono
+    component: LogIn, // 
+    layout: "/admin" // S'HA DE CREAR UN NOU LAYOUT
   },
   {
     path: "/user",
