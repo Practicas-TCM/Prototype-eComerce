@@ -1,45 +1,29 @@
 import React from "react";
 import Favorite from "@material-ui/icons/Favorite";
 import Button from "components/CustomButtons/Button.js";
-
-import InputGroup from 'react-bootstrap/InputGroup'
-
 import Table from "components/Table/Table.js";
-
-import Radio from "@material-ui/core/Radio";
-// @material-ui/icons
-import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
-
-import Icon from "@material-ui/core/Icon";
-
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-
 import Card from "components/Card/Card.js";
+import Checkbox from "@material-ui/core/Checkbox";
+import Check from "@material-ui/icons/Check";
+import AddAlert from "@material-ui/icons/AddAlert";
+import Snackbar from "components/Snackbar/Snackbar.js";
+import producte from "assets/img/faces/valla.jpg";
+import { makeStyles } from "@material-ui/core/styles";
+
+import InputGroup from 'react-bootstrap/InputGroup'
+import Radio from "@material-ui/core/Radio";
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+import Icon from "@material-ui/core/Icon";
+import CustomInput from "components/CustomInput/CustomInput.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
-import Checkbox from "@material-ui/core/Checkbox";
-// @material-ui/icons
-import Check from "@material-ui/icons/Check";
-
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import FormControl from 'react-bootstrap/FormControl';
-
-// @material-ui/icons
-import AddAlert from "@material-ui/icons/AddAlert";
-//core components
-import Snackbar from "components/Snackbar/Snackbar.js";
-
-// core components
-import producte from "assets/img/faces/valla.jpg";
-
-import { makeStyles } from "@material-ui/core/styles";
-
 import Quote from "components/Typography/Quote.js";
 import Muted from "components/Typography/Muted.js";
 import Primary from "components/Typography/Primary.js";
@@ -147,13 +131,10 @@ export default function UserProfile() {
     setChecked(newChecked);
   };
 
-
-  const [selectedValue, setSelectedValue] = React.useState(null);
-
   return (
     <div>
       <GridContainer fluid>
-        <GridItem /*style={{width:"50%"}}*/ xs={12} sm={12} md={5}>
+        <GridItem xs={12} sm={12} md={5}>
           {/* CARD 1 */}
           <Card>
             {/* IMATGE PRODUCTE  */}
@@ -162,7 +143,7 @@ export default function UserProfile() {
             </div>
           </Card>
         </GridItem>
-        <GridItem /*style={{width:"50%"}}*/ xs={12} sm={12} md={5}>
+        <GridItem xs={12} sm={12} md={5}>
           {/*CARD 2*/}
           <Card>
             <div style={{ margin: "20px" }}>
@@ -180,11 +161,10 @@ export default function UserProfile() {
               <div style={{ fontWeight: "bold" }}>
                 <span>Enviament:</span> <span style={{ color: "red" }}> 15,50€</span><br></br>
                 <span>Marca: JARBRIC</span> <br></br>
-                <span style={{ float: "left", marginRight:"10px"}}>Quantitat: </span>
+                <span style={{ float: "left", marginRight: "10px" }}>Quantitat: </span>
                 <span style={{ float: "left", cursor: "pointer" }} class="material-icons" onClick={() => addOneProduct()}>add_box</span>
                 <div style={{ float: "left", marginLeft: "10px", marginRight: "10px" }}>{qtt}</div>
                 <span style={{ cursor: "pointer" }} class="material-icons" onClick={() => minusOneProduct()}>indeterminate_check_box</span>
-
               </div>
 
               {/*ZONA BOTONS*/}
@@ -216,13 +196,15 @@ export default function UserProfile() {
                   }}
                 />
               </div>
-              <div style={{ marginTop: "10px" }}> Garantia per rotura i dany accidental +1 any</div>
+              <div style={{ marginTop: "10px" }}>
+                <span>Garantia per rotura i dany accidental +1 any</span>
+              </div>
 
             </div>
           </Card>
 
         </GridItem>
-        <GridItem /*style={{width:"50%"}}*/ xs={12} sm={12} md={10}>
+        <GridItem xs={12} sm={12} md={10}>
           {/* CARD 3 */}
           <Card>
             <div style={{ margin: "20px" }}>
