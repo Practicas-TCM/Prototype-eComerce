@@ -6,6 +6,10 @@ import InputGroup from 'react-bootstrap/InputGroup'
 
 import Table from "components/Table/Table.js";
 
+import Radio from "@material-ui/core/Radio";
+// @material-ui/icons
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+
 import Icon from "@material-ui/core/Icon";
 
 import GridItem from "components/Grid/GridItem.js";
@@ -18,6 +22,9 @@ import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
+import Checkbox from "@material-ui/core/Checkbox";
+// @material-ui/icons
+import Check from "@material-ui/icons/Check";
 
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -40,8 +47,6 @@ import Info from "components/Typography/Info.js";
 import Success from "components/Typography/Success.js";
 import Warning from "components/Typography/Warning.js";
 import Danger from "components/Typography/Danger.js";
-
-
 
 const styles = {
   typo: {
@@ -82,7 +87,6 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-
 export default function UserProfile() {
   const [qtt, setQtt] = React.useState(1);
 
@@ -90,14 +94,13 @@ export default function UserProfile() {
   const [likeProduct, setLikeProduct] = React.useState(false);
   const [place, setPlace] = React.useState("bc");
   const [color, setColor] = React.useState("info");
-  const [message, setMessage] = React.useState("Has afegit a preferits el producte.");
+  const [message, setMessage] = React.useState("");
+
   const showNotification = () => {
     if (open === false && likeProduct === false) {
-      var newColor = "success";
-      var newPlace = "bc";
-
-      setPlace(newPlace);
-      setColor(newColor);
+      setMessage("Has afegit a preferits el producte.")
+      setPlace("bc");
+      setColor("success");
       setOpen(true);
       setLikeProduct(true);
       setTimeout(function () {
@@ -105,12 +108,9 @@ export default function UserProfile() {
       }, 5000);
     }
     else if (open === false && likeProduct === true) {
-      newColor = "warning";
-      newPlace = "bc";
-
       setMessage("Has retirat de preferits el producte.")
-      setPlace(newPlace);
-      setColor(newColor);
+      setPlace("bc");
+      setColor("warning");
       setOpen(true);
       setLikeProduct(false);
       setTimeout(function () {
@@ -134,6 +134,22 @@ export default function UserProfile() {
   };
 
   const classes = useStyles();
+  const [checked, setChecked] = React.useState([]);
+  const handleToggle = value => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
+
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+    setChecked(newChecked);
+  };
+
+
+  const [selectedValue, setSelectedValue] = React.useState(null);
+
   return (
     <div>
       <GridContainer fluid>
@@ -151,7 +167,7 @@ export default function UserProfile() {
           <Card>
             <div style={{ margin: "20px" }}>
               <div>
-                <h3 style={{ fontWeight: "bold", textAlign: "center", marginBottom: "30px" }}>Valla de fusta classica 120 x 210 {"\n"}</h3>
+                <h3 style={{ fontWeight: "bold", textAlign: "center", marginBottom: "30px" }}>Tanca de fusta classica 120 x 210 {"\n"}</h3>
 
                 {/*ZONA PREUS*/}
                 <div>
@@ -164,8 +180,7 @@ export default function UserProfile() {
               <div style={{ fontWeight: "bold" }}>
                 <span>Enviament:</span> <span style={{ color: "red" }}> 15,50€</span><br></br>
                 <span>Marca: JARBRIC</span> <br></br>
-                <span>Models disponibles:</span> <br></br>
-                <span style={{ float: "left", }}>Quantitat: </span>
+                <span style={{ float: "left", marginRight:"10px"}}>Quantitat: </span>
                 <span style={{ float: "left", cursor: "pointer" }} class="material-icons" onClick={() => addOneProduct()}>add_box</span>
                 <div style={{ float: "left", marginLeft: "10px", marginRight: "10px" }}>{qtt}</div>
                 <span style={{ cursor: "pointer" }} class="material-icons" onClick={() => minusOneProduct()}>indeterminate_check_box</span>
@@ -190,6 +205,19 @@ export default function UserProfile() {
                 <Button color="warning" round><span class="material-icons">done</span> Comprar </Button>
               </div>
 
+              <div style={{ float: "left" }}>
+                <Checkbox
+                  tabIndex={-1}
+                  onClick={() => handleToggle(1)}
+                  checkedIcon={<Check className={classes.checkedIcon} />}
+                  icon={<Check className={classes.uncheckedIcon} />}
+                  classes={{
+                    checked: classes.checked
+                  }}
+                />
+              </div>
+              <div style={{ marginTop: "10px" }}> Garantia per rotura i dany accidental +1 any</div>
+
             </div>
           </Card>
 
@@ -197,20 +225,29 @@ export default function UserProfile() {
         <GridItem /*style={{width:"50%"}}*/ xs={12} sm={12} md={10}>
           {/* CARD 3 */}
           <Card>
-            {/* TAULA DETALLS DEL PRODUCTE  */}
-            <div style={{ textAlign: "center" }}>
-            <Table
-                tableHeaderColor="primary"
-                
-                tableData={[
-                  ["Dakota Rice", "Niger"],
-                  ["Minerva Hooper", "Curaçao"],
-                  ["Sage Rodriguez", "Netherlands"],
-                  ["Philip Chaney", "Korea, South"],
-                  ["Doris Greene", "Malawi"],
-                  ["Mason Porter", "Chile"]
-                ]}
-              />
+            <div style={{ margin: "20px" }}>
+              <div>
+                <span style={{ fontWeight: "bold" }}> DESCRIPCIÓ </span><br></br>
+                <span> Tanca de fusta clàssica 120 x 210   </span><br></br>
+                <span>Fabricada en fusta de pi amb tractament en autoclau.  </span><br></br>
+                <span>Jarbric ofereix una àmplia gamma d'articles de fusta de la millor qualitat.  </span><br></br>
+                <span>Funcionals o decoratius, són articles molt demandats pels nostres clients que veuen en la fusta la resistència, qualitat i disseny que necessiten.  </span><br></br>
+                <span>Tots els nostres articles tenen la garantia internacional FSC (Forest Stewardship Council).  </span><br></br>
+              </div>
+              {/* TAULA DETALLS DEL PRODUCTE  */}
+              <div style={{ textAlign: "center" }}>
+                <Table
+                  tableData={[
+                    ["Marca", "JARBRIC"],
+                    ["Tipus", "Tanca"],
+                    ["Material", "Pi"],
+                    ["Altura", "120 cm"],
+                    ["Longitud", "2.1 m"],
+                    ["Referencia Botiga", "ME11959669"],
+                    ["Referencia Venedor", "7167"]
+                  ]}
+                />
+              </div>
             </div>
           </Card>
         </GridItem>
@@ -220,30 +257,5 @@ export default function UserProfile() {
   );
 
 }
-
-
-// or less ideally
-// import { Row, Col } from 'react-bootstrap';
-
-// export default class Product extends React.Component {
-//     render() {
-//       return (
-//         <Row>
-//         <Col>
-//         <div>
-//               HOLA PEPSICOLA {this.props.name}
-//             </div>
-//         </Col>
-//         <Col>
-//         <div>
-//               HOLA CARACOLA {this.props.name}
-//             </div>
-//         </Col>
-//       </Row>
-//       );
-//     }
-//   }
-
-
 
 //https://www.manomano.es/p/valla-madera-clasica-lama-rayada-11959666?model_id=11959669
