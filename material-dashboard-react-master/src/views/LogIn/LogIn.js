@@ -1,9 +1,6 @@
 import React from "react";
-// @material-ui/icons
-import Person from "@material-ui/icons/Person";
-import PersonAdd from "@material-ui/icons/PersonAdd";
+
 import Checkbox from "@material-ui/core/Checkbox";
-import Check from "@material-ui/icons/Check";
 import Grid from "@material-ui/core/Grid";
 import Tabs from "components/CustomTabs/CustomTabs.js";
 import { makeStyles } from "@material-ui/core/styles";
@@ -14,13 +11,13 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import GridItem from "components/Grid/GridItem.js";
 // @material-ui/icons
 import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+import Person from "@material-ui/icons/Person";
+import Check from "@material-ui/icons/Check";
+import PersonAdd from "@material-ui/icons/PersonAdd";
 //core components
 import styles from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle.js";
 const useStyles = makeStyles(styles);
 // @material-ui/core components
-
-
-
 
 export default function LogIn() {
     const classes = useStyles();
@@ -54,9 +51,7 @@ export default function LogIn() {
                                     <GridItem xs={12} sm={12} md={12}>
                                         <CustomInput
                                             id="regular"
-                                            inputProps={{
-                                                placeholder: "Email (*)"
-                                            }}
+                                            labelText="Email (*)"
                                             formControlProps={{
                                                 fullWidth: true
                                             }}
@@ -65,9 +60,7 @@ export default function LogIn() {
                                     <GridItem xs={12} sm={12} md={12}>
                                         <CustomInput
                                             id="regular"
-                                            inputProps={{
-                                                placeholder: "Contrasenya (*)"
-                                            }}
+                                            labelText="Contrasenya (*)"
                                             formControlProps={{
                                                 fullWidth: true
                                             }}
@@ -99,14 +92,14 @@ export default function LogIn() {
                                             checked={selectedValue === "a"}
                                             onChange={() => setSelectedValue("a")}
                                             value="a"
-                                            name="conta personal"
+                                            name="conta particular"
                                             aria-label="A"
                                             icon={<FiberManualRecord className={classes.radioUnchecked} />}
                                             checkedIcon={<FiberManualRecord className={classes.radioChecked} />}
                                             classes={{
                                                 checked: classes.radio
                                             }}
-                                        /> Personal<br></br>
+                                        /> Particular <br></br>
                                         <Radio
                                             checked={selectedValue === "b"}
                                             onChange={() => setSelectedValue("b")}
@@ -120,12 +113,34 @@ export default function LogIn() {
                                             }}
                                         /> Empresa o organització
                                     </GridItem>
+
                                     <GridItem xs={12} sm={12} md={12}>
-                                        <CustomInput
-                                            id="regular"
-                                            inputProps={{
-                                                placeholder: "Email (*)"
+                                        
+                                        <CustomInput 
+                                            id="first-name"
+                                            labelText="Nom (*)"
+                                            formControlProps={{
+                                                fullWidth: true
                                             }}
+                                        />
+                                    </GridItem>
+
+                                    <GridItem xs={12} sm={12} md={12}>
+                                        
+                                        <CustomInput 
+                                            id="surnames"
+                                            labelText="Cognoms (*)"
+                                            formControlProps={{
+                                                fullWidth: true
+                                            }}
+                                        />
+                                    </GridItem>
+
+                                    <GridItem xs={12} sm={12} md={12}>
+                                        
+                                        <CustomInput 
+                                            id="float"
+                                            labelText="Email (*)"
                                             formControlProps={{
                                                 fullWidth: true
                                             }}
@@ -134,9 +149,7 @@ export default function LogIn() {
                                     <GridItem xs={12} sm={12} md={12}>
                                         <CustomInput
                                             id="regular"
-                                            inputProps={{
-                                                placeholder: "Contrasenya (*)"
-                                            }}
+                                            labelText="Contrasenya (*)"
                                             formControlProps={{
                                                 fullWidth: true
                                             }}
@@ -146,10 +159,7 @@ export default function LogIn() {
                                     <GridItem xs={12} sm={12} md={12}>
                                         <CustomInput
                                             id="regular"
-
-                                            inputProps={{
-                                                placeholder: "SEGURETAT: Repeteix la contrasenya (*)"
-                                            }}
+                                            labelText="SEGURETAT: Repeteix la contrasenya (*)"
                                             formControlProps={{
                                                 fullWidth: true
                                             }}
@@ -182,3 +192,14 @@ export default function LogIn() {
     );
 
 }
+{/* <span>
+&copy; {1900 + new Date().getYear()}{" "}
+<a
+  href="https://www.creative-tim.com?ref=mdr-footer"
+  target="_blank"
+  className={classes.a}
+>
+  Creative Tim
+</a>
+, made with love for a better web
+</span> */}
