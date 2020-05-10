@@ -19,15 +19,13 @@
 
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import Product from "views/Product/Product.js" 
+import Company from "views/Company/Company.js"
 import LogIn from "views/LogIn/LogIn.js" 
 import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
@@ -44,7 +42,6 @@ const dashboardRoutes = [
   {
     path: "/table",
     name: "Homepage",
-    rtlName: "قائمة الجدول",
     icon: HomeIcon,
     component: TableList,
     layout: "/admin"
@@ -52,7 +49,6 @@ const dashboardRoutes = [
   {
     path: "/products",
     name: "Products",
-    rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
     layout: "/admin"
@@ -62,19 +58,28 @@ const dashboardRoutes = [
     name: "Product", // titol
     icon: "", // icono
     component: Product, // 
-    layout: "/admin"
+    layout: "/admin",
+    visible: false
   },
   {
     path: "/logIn", // url 
     name: "Log In", // titol
     icon: "", // icono
     component: LogIn, // 
-    layout: "/admin" // S'HA DE CREAR UN NOU LAYOUT
+    layout: "/admin",
+    visible: false
+  },
+  {
+    path: "/company", // url 
+    name: "Company", // titol
+    icon: "", // icono
+    component: Company, // component
+    layout: "/admin",
+    visible: false
   },
   {
     path: "/user",
     name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
     layout: "/admin"
@@ -82,7 +87,6 @@ const dashboardRoutes = [
   {
     path: "/notifications",
     name: "Notifications",
-    rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
     layout: "/admin"

@@ -1,8 +1,6 @@
-
 import { makeStyles } from "@material-ui/core/styles";
 
 import Button from "components/CustomButtons/Button.js";
-
 
 import React, { Component } from "react";
 
@@ -54,7 +52,6 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
     const classes = useStyles();
-
     return (
         <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
@@ -70,7 +67,7 @@ export default function TableList() {
                         <img className="photo" src={bri1} alt="Logo"/>
 
                         <form>
-                            <Button color = "primary"  style={styles.loginButtonSection} variant="btn btn-success" onClick={event =>  window.location.href='/dashboard'}>Anar a la botiga ➜</Button>
+                            <Button color = "primary"  style={styles.loginButtonSection} variant="btn btn-success" onClick={event =>  window.location.href='/admin/products'}>Anar a la botiga ➜</Button>
                         </form>
                     </CardBody>
                 </Card>

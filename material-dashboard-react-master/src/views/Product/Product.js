@@ -12,8 +12,6 @@ import Snackbar from "components/Snackbar/Snackbar.js";
 import producte from "assets/img/faces/valla.jpg";
 import { makeStyles } from "@material-ui/core/styles";
 
-
-
 const styles = {
   typo: {
     paddingLeft: "25%",
