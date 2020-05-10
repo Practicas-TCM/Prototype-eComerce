@@ -34,6 +34,7 @@ import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 import Maps from "views/Maps/Maps.js";
+import HomeIcon  from '@material-ui/icons/Home';
 import NotificationsPage from "views/Notifications/Notifications.js";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
@@ -41,6 +42,14 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 
 const dashboardRoutes = [
   {
+    path: "/table",
+    name: "Homepage",
+    rtlName: "قائمة الجدول",
+    icon: HomeIcon,
+    component: TableList,
+    layout: "/admin"
+  },
+    {
     path: "/dashboard",
     name: "Dashboard",
     rtlName: "لوحة القيادة",
@@ -68,14 +77,6 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
-    layout: "/admin"
-  },
-  {
-    path: "/table",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
     layout: "/admin"
   },
   {
