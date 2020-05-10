@@ -31,7 +31,7 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/admin" component={Admin} />
-      <Redirect from="/" to="/admin/products" />
+      <Redirect from="/" to="/admin/table" />
     </Switch>
   </Router>,
   document.getElementById("root")
