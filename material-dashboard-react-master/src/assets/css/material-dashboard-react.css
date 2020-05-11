@@ -26,8 +26,8 @@
   stroke: rgba(255, 255, 255, 0.8);
 }
 .photo {
-  height: 450px;
-  width: 1045px;
+  width: 100%;
+  height: auto; /* height: 400 px*/
 }
 .ct-label.ct-horizontal.ct-end {
   -webkit-box-align: flex-start;
