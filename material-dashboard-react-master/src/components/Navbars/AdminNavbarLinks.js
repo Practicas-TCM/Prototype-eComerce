@@ -190,6 +190,7 @@ export default function AdminNavbarLinks() {
                     >
                       <Link style={{ color: "black" }} to={"/admin/logIn"}>{"Iniciar sessió / registrar-se"}</Link>
                     </MenuItem>
+
                     <MenuItem style={{ color: "black" }}
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
@@ -198,10 +199,11 @@ export default function AdminNavbarLinks() {
                     </MenuItem>
                     <Divider light />
                     <MenuItem
+                    style={{ color: "black" }}
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      <Link to={"/admin/logIn"}>{"Login"}</Link>
+                      LogOut
                     </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
