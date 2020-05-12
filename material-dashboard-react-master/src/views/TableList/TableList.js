@@ -1,8 +1,6 @@
-
 import { makeStyles } from "@material-ui/core/styles";
 
 import Button from "components/CustomButtons/Button.js";
-
 
 import React, { Component } from "react";
 
@@ -54,7 +52,6 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
     const classes = useStyles();
-
     return (
         <GridContainer>
             <GridItem xs={12} sm={12} md={12}>

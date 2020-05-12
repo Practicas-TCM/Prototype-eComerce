@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
@@ -139,6 +140,14 @@ export default function AdminNavbarLinks() {
         </Poppers>
       </div>
       <div className={classes.manager}>
+        <Button color={window.innerWidth > 959 ? "transparent" : "white"}
+          justIcon={window.innerWidth > 959}
+          simple={!(window.innerWidth > 959)}>
+          <span class="material-icons">shopping_cart</span>
+        </Button>
+
+      </div>
+      <div className={classes.manager}>
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
@@ -180,13 +189,20 @@ export default function AdminNavbarLinks() {
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      Profile
+                      <Link style={{ color: "black" }} to={"/admin/logIn"}>{"Iniciar sessió / registrar-se"}</Link>
                     </MenuItem>
+                    {/*S'HA DE TREURE <--------------------------------------------------------------------------------------------*/}
                     <MenuItem
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      Settings
+                      <Link style={{ color: "black" }} to={"/admin/product"}>{"PRODUCTE"}</Link>
+                    </MenuItem>
+                    <MenuItem style={{ color: "black" }}
+                      onClick={handleCloseProfile}
+                      className={classes.dropdownItem}
+                    >
+                      Fer-se prèmium
                     </MenuItem>
                     <Divider light />
                     <MenuItem
