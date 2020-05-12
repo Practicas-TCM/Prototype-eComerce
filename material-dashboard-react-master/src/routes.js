@@ -26,16 +26,16 @@ import Product from "views/Product/Product.js"
 import Company from "views/Company/Company.js"
 import LogIn from "views/LogIn/LogIn.js" 
 import UserProfile from "views/UserProfile/UserProfile.js";
-import TableList from "views/TableList/TableList.js";
+import HomePage from "views/HomePage/HomePage.js";
 import HomeIcon  from '@material-ui/icons/Home';
 import NotificationsPage from "views/Notifications/Notifications.js";
 
 const dashboardRoutes = [
   {
-    path: "/table",
+    path: "/home",
     name: "Homepage",
     icon: HomeIcon,
-    component: TableList,
+    component: HomePage,
     layout: "/admin"
   },
   {

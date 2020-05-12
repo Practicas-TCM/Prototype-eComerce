@@ -85,7 +85,7 @@ export default function Sidebar(props) {
     <div className={classes.logo}>
       <a
 
-        href="/admin/table"
+        href="/admin/home"
 
         className={classNames(classes.logoLink, {
           [classes.logoLinkRTL]: props.rtlActive

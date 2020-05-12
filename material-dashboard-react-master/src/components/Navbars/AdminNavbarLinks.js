@@ -18,7 +18,6 @@ import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
-import { Link } from "react-router-dom";
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
@@ -190,13 +189,6 @@ export default function AdminNavbarLinks() {
                       className={classes.dropdownItem}
                     >
                       <Link style={{ color: "black" }} to={"/admin/logIn"}>{"Iniciar sessió / registrar-se"}</Link>
-                    </MenuItem>
-                    {/*S'HA DE TREURE <--------------------------------------------------------------------------------------------*/}
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      <Link style={{ color: "black" }} to={"/admin/product"}>{"PRODUCTE"}</Link>
                     </MenuItem>
                     <MenuItem style={{ color: "black" }}
                       onClick={handleCloseProfile}
