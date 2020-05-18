@@ -25,6 +25,7 @@ import DashboardPage from "views/Dashboard/Dashboard.js";
 import Product from "views/Product/Product.js" 
 import Company from "views/Company/Company.js"
 import LogIn from "views/LogIn/LogIn.js" 
+import Cart from "views/Cart/Cart.js" 
 import UserProfile from "views/UserProfile/UserProfile.js";
 import HomePage from "views/HomePage/HomePage.js";
 import HomeIcon  from '@material-ui/icons/Home';
@@ -60,6 +61,14 @@ const dashboardRoutes = [
     component: LogIn, // 
     layout: "/admin",
     visible: false
+  },
+  {
+    path: "/cart", // url 
+    name: "Els teus Articles", // titol
+    icon: "", // icono
+    component: Cart, // 
+    layout: "/admin",
+
   },
   {
     path: "/company", // url 
