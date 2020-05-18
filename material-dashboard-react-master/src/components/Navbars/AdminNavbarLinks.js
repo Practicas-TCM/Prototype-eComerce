@@ -142,7 +142,8 @@ export default function AdminNavbarLinks() {
         <Button color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}>
-          <span class="material-icons">shopping_cart</span>
+          <Link style={{color:"darkslategrey"}} to={"/admin/cart"}>{<span class="material-icons">shopping_cart</span>}</Link>
+          
         </Button>
 
       </div>
