@@ -179,9 +179,9 @@ export default function LogIn() {
                                             politica de privacitat
                                         </a>
                                     </div>
-                                    <div>
-                                        <Button style={{ with: "relative", textAlign: "center" }} type="button" color="success">REGISTRAR-SE</Button>
-                                    </div>
+                                    
+                                        <Button  type="button" color="success">REGISTRAR-SE</Button>
+                                   
                                 </Grid>
                             </div>
                         )

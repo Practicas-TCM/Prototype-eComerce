@@ -52,7 +52,7 @@ const dashboardRoutes = [
     icon: "", // icono
     component: Product, // 
     layout: "/admin",
-    visible: false
+    visible: false // perque no surti al menú
   },
   {
     path: "/logIn", // url 
@@ -68,6 +68,7 @@ const dashboardRoutes = [
     icon: "", // icono
     component: Cart, // 
     layout: "/admin",
+    visible: false
 
   },
   {

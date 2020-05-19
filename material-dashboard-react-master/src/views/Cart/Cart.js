@@ -8,27 +8,27 @@ import producte from "assets/img/faces/valla.jpg";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-    const [qtt, setQtt] = React.useState(1);
+    const [qttValla, setQttValla] = React.useState(1);
     const minusOneProduct = () => {
-        if (qtt > 1) {
-            var actual = qtt - 1;
-            setQtt(actual);
+        if (qttValla > 1) {
+            var actual = qttValla - 1;
+            setQttValla(actual);
         }
     };
 
     const addOneProduct = () => {
-        var actual = qtt + 1;
-        setQtt(actual);
+        var actual = qttValla + 1;
+        setQttValla(actual);
     };
 
     const imgValla = <img style={{ width: "90px" }} src={producte} alt="fence product" />;
     const desciptionValla = "Tanca de fusta clàssica 120x210";
     const priceValla = 39.99;
     const priceTransport = 15.50;
-    const totalValla = Math.round((priceValla * qtt) * 100) / 100;
-    const totalCompra = Math.round(((priceValla * qtt) + priceTransport) * 100) / 100;
+    const totalValla = Math.round((priceValla * qttValla) * 100) / 100;
+    const totalCompra = Math.round(((priceValla * qttValla) + priceTransport) * 100) / 100;
     const quantityBox = <div> <span style={{ float: "left", cursor: "pointer" }} class="material-icons" onClick={() => addOneProduct()}>add_box</span>
-        <div style={{ float: "left", marginLeft: "10px", marginRight: "10px" }}>{qtt}</div>
+        <div style={{ float: "left", marginLeft: "10px", marginRight: "10px" }}>{qttValla}</div>
         <span style={{ cursor: "pointer" }} class="material-icons" onClick={() => minusOneProduct()}>indeterminate_check_box</span> </div>;
 
     const totalPrice = totalValla;
@@ -57,7 +57,7 @@ export default function Cart() {
                                         <span class="material-icons">done</span>
                                     </div>
                                     <div style={{ padding: "2px" }}>
-                                        <span>Benvingut a Brico Campus! Enviament GRATUÏT en la teva primera comanda. Seleccioneu aquesta opció a l'finalitzar la compra.</span>
+                                        <span>Benvingut a Brico Campus! <br></br> Tens un codi promocional? El pots utilitzar en el moment de l'pagament!</span>
                                     </div>
                                 </div>
                                 <div style={{ marginTop: "10px", borderBottom: "grey 2px solid" }}></div>
