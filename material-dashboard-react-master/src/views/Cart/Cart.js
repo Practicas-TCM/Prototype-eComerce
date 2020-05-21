@@ -35,7 +35,7 @@ export default function Cart() {
 
     return (
         <div>
-            <GridContainer fluid>
+            <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={8}>
                     <Card>
                         <Table style={{ padding: "5px" }}
@@ -66,7 +66,6 @@ export default function Cart() {
                                 <span style={{ fontWeight: "bold", fontSize: "x-large" }}> TOTAL: {totalCompra} € </span> <br></br>
                                 <span style={{ color: "grey" }}>(Enviament inclós)</span>
                             </div>
-
                             <div style={{ textAlign: "center" }}>
                                 <Button color="warning" size="lg"> realitzar la comanda</Button>
                             </div>

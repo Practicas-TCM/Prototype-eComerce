@@ -37,7 +37,7 @@ const dashboardRoutes = [
     name: "Homepage",
     icon: HomeIcon,
     component: HomePage,
-    layout: "/admin"
+    layout: "/page"
   },
   {
     path: "/products",
