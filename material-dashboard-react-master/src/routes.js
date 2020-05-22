@@ -26,6 +26,7 @@ import Product from "views/Product/Product.js"
 import Company from "views/Company/Company.js"
 import LogIn from "views/LogIn/LogIn.js" 
 import Cart from "views/Cart/Cart.js" 
+import Prova from "views/Prova/Prova.js" 
 import UserProfile from "views/UserProfile/UserProfile.js";
 import HomePage from "views/HomePage/HomePage.js";
 import HomeIcon  from '@material-ui/icons/Home';
@@ -38,6 +39,13 @@ const dashboardRoutes = [
     icon: HomeIcon,
     component: HomePage,
     layout: "/page"
+  },
+  {
+    path: "/prova",
+    name: "Prova",
+    icon: "",
+    component: Prova,
+    layout: "/admin"
   },
   {
     path: "/products",
