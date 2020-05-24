@@ -1,6 +1,5 @@
 
 import React, { Component } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { Paper } from '@material-ui/core'
 import Carousel from 'react-material-ui-carousel'
 import Button from "components/CustomButtons/Button.js";
@@ -8,7 +7,6 @@ import Button from "components/CustomButtons/Button.js";
 import bri1 from 'assets/img/brico1.png';
 import bri2 from 'assets/img/brico2.png';
 import bri3 from 'assets/img/brico3.png';
-
 
 export default function TableList() {
 

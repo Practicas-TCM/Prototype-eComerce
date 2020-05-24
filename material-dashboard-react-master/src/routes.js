@@ -24,9 +24,9 @@ import Notifications from "@material-ui/icons/Notifications";
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import Product from "views/Product/Product.js" 
 import Company from "views/Company/Company.js"
-import LogIn from "views/LogIn/LogIn.js" 
+import SingIn from "views/SingIn/SingIn.js" 
 import Cart from "views/Cart/Cart.js" 
-import Prova from "views/Prova/Prova.js" 
+import SingUp from "views/SingUp/SingUp.js" 
 import UserProfile from "views/UserProfile/UserProfile.js";
 import HomePage from "views/HomePage/HomePage.js";
 import HomeIcon  from '@material-ui/icons/Home';
@@ -41,11 +41,20 @@ const dashboardRoutes = [
     layout: "/page"
   },
   {
-    path: "/prova",
-    name: "Prova",
+    path: "/singIn", // url 
+    name: "Log In", // titol
+    icon: "", // icono
+    component: SingIn, // 
+    layout: "/page",
+    visible: false
+  },
+  {
+    path: "/singUp",
+    name: "SingUp",
     icon: "",
-    component: Prova,
-    layout: "/admin"
+    component: SingUp,
+    layout: "/page",
+    visible: false
   },
   {
     path: "/products",
@@ -62,14 +71,7 @@ const dashboardRoutes = [
     layout: "/admin",
     visible: false // perque no surti al menú
   },
-  {
-    path: "/logIn", // url 
-    name: "Log In", // titol
-    icon: "", // icono
-    component: LogIn, // 
-    layout: "/admin",
-    visible: false
-  },
+  
   {
     path: "/cart", // url 
     name: "Els teus Articles", // titol

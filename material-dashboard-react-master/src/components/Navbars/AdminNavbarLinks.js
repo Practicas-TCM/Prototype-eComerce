@@ -189,7 +189,14 @@ export default function AdminNavbarLinks() {
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      <Link style={{ color: "black" }} to={"/admin/logIn"}>{"Iniciar sessió / registrar-se"}</Link>
+                      <Link style={{ color: "black" }} to={"/page/singIn"}>{"Iniciar sessió"}</Link>
+                    </MenuItem>
+
+                    <MenuItem
+                      onClick={handleCloseProfile}
+                      className={classes.dropdownItem}
+                    >
+                      <Link style={{ color: "black" }} to={"/page/singUp"}>{"Registrar-se"}</Link>
                     </MenuItem>
 
                     <MenuItem style={{ color: "black" }}
