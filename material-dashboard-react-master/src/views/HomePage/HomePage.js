@@ -10,7 +10,13 @@ import GridContainer from "components/Grid/GridContainer.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import bri1 from 'assets/img/bri1.jpg';
+import Carousel from 'react-material-ui-carousel'
+
+// images
+import bri1 from 'assets/img/brico1.png';
+import bri2 from 'assets/img/brico2.png';
+import bri3 from 'assets/img/brico3.png';
+import bri4 from 'assets/img/brico4.png';
 
 const styles = {
     cardCategoryWhite: {
@@ -52,27 +58,54 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
     const classes = useStyles();
+
+    var items = [
+        {
+            src: bri1,
+            altText: 'Slide 1',
+            caption: 'Slide 1'
+        },
+        {
+            src: bri2,
+            altText: 'Slide 2',
+            caption: 'Slide 2'
+        },
+        {
+            src: bri3,
+            altText: 'Slide 3',
+            caption: 'Slide 3'
+        },
+        {
+            src: bri4,
+            altText: 'Slide 3',
+            caption: 'Slide 3'
+        }
+    ]
+
     return (
         <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
                 <Card>
                     <CardHeader color="success">
                         <h2 className={classes.cardTitleWhite}
-                            style={{textAlignVertical: "center", textAlign: "center",}}> BricoCampus</h2>
-                        <h4 className={classes.cardCategoryWhite} style={{textAlignVertical: "center", textAlign: "center",}}>
+                            style={{ textAlignVertical: "center", textAlign: "center", }}> BricoCampus</h2>
+                        <h4 className={classes.cardCategoryWhite} style={{ textAlignVertical: "center", textAlign: "center", }}>
                             Fes una ullada al món del bricolatge
                         </h4>
                     </CardHeader>
                     <CardBody >
-                        <img className="photo" src={bri1} alt="Logo"/>
+                        <Carousel>
+                            {
+                                items.map(item =>  <img style={{width:"100%"}} src={item.src} alt={item.altText} />)
+                            }
+                        </Carousel>
 
                         <form>
-                            <Button color = "primary"  style={styles.loginButtonSection} variant="btn btn-success" onClick={event =>  window.location.href='/admin/products'}>Anar a la botiga ➜</Button>
+                            <Button color="primary" style={styles.loginButtonSection} variant="btn btn-success" onClick={event => window.location.href = '/admin/products'}>Anar a la botiga ➜</Button>
                         </form>
                     </CardBody>
                 </Card>
             </GridItem>
         </GridContainer>
-
     );
 }

@@ -23,7 +23,9 @@ import Notifications from "@material-ui/icons/Notifications";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import Company from "views/Company/Company.js"
-import LogIn from "views/LogIn/LogIn.js" 
+import SingIn from "views/SingIn/SingIn.js" 
+import Cart from "views/Cart/Cart.js" 
+import SingUp from "views/SingUp/SingUp.js" 
 import UserProfile from "views/UserProfile/UserProfile.js";
 import HomePage from "views/HomePage/HomePage.js";
 import HomeIcon  from '@material-ui/icons/Home';
@@ -40,7 +42,23 @@ const dashboardRoutes = [
     name: "Homepage",
     icon: HomeIcon,
     component: HomePage,
-    layout: "/admin"
+    layout: "/page"
+  },
+  {
+    path: "/singIn", // url 
+    name: "Log In", // titol
+    icon: "", // icono
+    component: SingIn, // 
+    layout: "/page",
+    visible: false
+  },
+  {
+    path: "/singUp",
+    name: "SingUp",
+    icon: "",
+    component: SingUp,
+    layout: "/page",
+    visible: false
   },
   {
     path: "/products",
@@ -71,15 +89,17 @@ const dashboardRoutes = [
     icon: "", // icono
     component: Cortacesped, // 
     layout: "/admin",
-    visible: false
+    visible: false // perque no surti al menú
   },
+  
   {
-    path: "/logIn", // url 
-    name: "Log In", // titol
+    path: "/cart", // url 
+    name: "Els teus Articles", // titol
     icon: "", // icono
-    component: LogIn, // 
+    component: Cart, // 
     layout: "/admin",
     visible: false
+
   },
   {
     path: "/company", // url 
