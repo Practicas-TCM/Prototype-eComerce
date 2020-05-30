@@ -51,7 +51,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function Product() {
+export default function TancaFusta() {
   const [qtt, setQtt] = React.useState(1);
 
   const [open, setOpen] = React.useState(false);
