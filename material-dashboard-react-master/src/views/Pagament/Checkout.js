@@ -100,15 +100,15 @@ export default function Checkout() {
               </Step>
             ))}
           </Stepper>
-          <React.Fragment>
+          <React.Fragment >
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
                   Gràcies per la seva compra.
                 </Typography>
-                <Typography variant="subtitle1">
-                  El seu número de compra és #2001539. Li hem enviat un correu amb la confirmació de la teva compra, i
-                  li anirem notificant l'estat del seu producte.
+                <Typography variant="subtitle1" style={{marginBottom:"100px"}}>
+                  El seu número de compra és #2001539. Li hem enviat un correu amb la confirmació de la seva compra, i
+                  l'anirem notificant l'estat del seu producte.
                   
                 </Typography>
               </React.Fragment>
