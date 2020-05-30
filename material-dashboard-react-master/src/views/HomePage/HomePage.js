@@ -99,9 +99,8 @@ export default function TableList() {
                                 items.map(item =>  <img style={{width:"100%"}} src={item.src} alt={item.altText} />)
                             }
                         </Carousel>
-
                         <form>
-                            <Button color="primary" style={styles.loginButtonSection} variant="btn btn-success" onClick={event => window.location.href = '/admin/products'}>Anar a la botiga ➜</Button>
+                            <Button color="primary" style={styles.loginButtonSection} variant="btn btn-success" onClick={event => window.location.href = '/admin/products'}><div style={{padding:"20px"}}>Anar a la botiga ➜</div></Button>
                         </form>
                     </CardBody>
                 </Card>
