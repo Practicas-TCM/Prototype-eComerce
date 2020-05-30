@@ -203,7 +203,7 @@ export default function AdminNavbarLinks() {
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      Fer-se prèmium
+                     <Link style={{ color: "black" }} to={"/page/premium"}>{"Fer-se prèmium"}</Link>
                     </MenuItem>
                     <Divider light />
                     <MenuItem

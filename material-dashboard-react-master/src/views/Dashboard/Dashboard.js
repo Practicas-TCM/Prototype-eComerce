@@ -45,7 +45,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
-               <Link to={"/admin/tancafusta"}>{"Ver producto"}</Link>
+               <Link to={"/admin/tancafusta"}>{"Veure producte"}</Link>
               </div>
             </CardFooter>
           </Card>
@@ -65,7 +65,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
-              <Link to={"/admin/jardinera"}>{"Ver producto"}</Link>
+              <Link to={"/admin/jardinera"}>{"Vuere producte"}</Link>
               </div>
             </CardFooter>
           </Card>
@@ -78,14 +78,14 @@ export default function Dashboard() {
                   <img src={producteCortacesped} alt="..." />
                 </a>
               </CardAvatar>
-              <h3 className={classes.cardTitle}>Cortacesped</h3>
+              <h3 className={classes.cardTitle}>Tallagespa</h3>
               <p className={classes.cardCategory}>
               224,00<small>€</small>
               </p>
             </CardHeader>
             <CardFooter stats>
             <div className={classes.stats}>
-              <Link to={"/admin/cortacesped"}>{"Ver producto"}</Link>
+              <Link to={"/admin/cortacesped"}>{"Veure producte"}</Link>
               </div>
             </CardFooter>
           </Card>
@@ -129,13 +129,13 @@ export default function Dashboard() {
                 <small>
                 <span className={classes.stats}>
                   <Danger>
-                  <strike> 00,00</strike>
+                  <strike> 62,00</strike>
                   </Danger>
                   </span> €
                   <span className={classes.successText}>
                     <ArroDownward className={classes.upArrowCardCategory} /> 50%
                   </span>{" "}
-                descuento.
+                descompte.
                 </small>
               </h4>
               <p className={classes.cardCategory}>
@@ -147,13 +147,13 @@ export default function Dashboard() {
             <CardFooter chart>
             <div className={classes.stats}>
                 <Danger>
-                  <Warning />Quedan 5 unidades!!
+                  <Warning />Queden 5 unitats!!
                 </Danger>
               </div>
             </CardFooter>
             <CardFooter chart>
               <div className={classes.stats}>
-               <Link to={"/admin/tancafusta"}>{"Ver producto"}</Link>
+               <Link to={"/admin/tancafusta"}>{"Veure producte"}</Link>
               </div>
             </CardFooter>
           </Card>
@@ -175,17 +175,17 @@ export default function Dashboard() {
                 <small>
                 <span className={classes.stats}>
                   <Danger>
-                  <strike> 00,00</strike>
+                  <strike> 52,00</strike>
                   </Danger>
                   </span> €
                   <span className={classes.successText}>
                     <ArroDownward className={classes.upArrowCardCategory} /> 50%
                   </span>{" "}
-                descuento.
+                descompte.
                 </small>
               </h4>
               </p>
-              <p>
+              <p className={classes.cardCategory}>
               Fabricats en formigó alleugerit amb parets més fines i amb resistència màxima. Els colors NATURAL són tintes naturals aplicades . . .
               </p>
             </CardBody>
@@ -194,7 +194,7 @@ export default function Dashboard() {
             </CardFooter>
             <CardFooter chart>
               <div className={classes.stats}>
-              <Link to={"/admin/jardinera"}>{"Ver producto"}</Link>
+              <Link to={"/admin/jardinera"}>{"Veure producte"}</Link>
               </div>
             </CardFooter>
           </Card>
@@ -209,24 +209,24 @@ export default function Dashboard() {
               </CardAvatar>
             </CardHeader>
             <CardBody>
-              <h3 className={classes.cardTitle}>Cortacesped</h3>
+              <h3 className={classes.cardTitle}>Tallagespa</h3>
               <p className={classes.cardCategory}>
               <h4 className={classes.cardTitle}>
                 224,99 / 
                 <small>
                 <span className={classes.stats}>
                   <Danger>
-                  <strike> 00,00</strike>
+                  <strike> 450,00</strike>
                   </Danger>
                   </span> €
                   <span className={classes.successText}>
                     <ArroDownward className={classes.upArrowCardCategory} /> 50%
                   </span>{" "}
-                descuento.
+                descompte.
                 </small>
               </h4>
               </p>
-              <p>
+              <p className={classes.cardCategory}>
               El GLM590X és un tallagespa autopropulsat de gasolina amb un ample de tall de 410mm i un potent motor de 4,5cv, dissenyat per a usuaris particulars que  . . .
               </p>
             </CardBody>
@@ -236,9 +236,7 @@ export default function Dashboard() {
             </CardFooter>
             <CardFooter chart>
               <div className={classes.stats}>
-                <a href="#product1" onClick={e => e.preventDefault()}>
-                  Ver producto
-                </a>
+              <Link to={"/admin/Cortacesped"}>{"Veure producte"}</Link>
               </div>
             </CardFooter>
           </Card>

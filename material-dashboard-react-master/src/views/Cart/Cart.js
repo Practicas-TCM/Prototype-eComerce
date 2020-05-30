@@ -67,7 +67,8 @@ export default function Cart() {
                                 <span style={{ color: "grey" }}>(Enviament inclós)</span>
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Button color="warning" size="lg"> realitzar la comanda</Button>
+                            <Link st to={"/page/checkOut"}>{<Button color="warning" size="lg"> realitzar la comanda</Button>}</Link>
+                                
                             </div>
                         </div>
                     </Card>

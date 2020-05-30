@@ -11,6 +11,7 @@ import AddAlert from "@material-ui/icons/AddAlert";
 import Snackbar from "components/Snackbar/Snackbar.js";
 import producte from "assets/img/faces/cortacesped.jpg";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const styles = {
   typo: {
@@ -60,6 +61,12 @@ export default function Cortacesped() {
   const [color, setColor] = React.useState("info");
   const [message, setMessage] = React.useState("");
 
+  const [openCarrito, setOpenCarrito] = React.useState(false);
+   const [likeProductCarrito, setLikeProductCarrito] = React.useState(false);
+  const [placeCarrito, setPlaceCarrito] = React.useState("bc");
+  const [colorCarrito, setColorCarrito] = React.useState("info");
+  const [messageCarrito, setMessageCarrito] = React.useState("");
+
   const showNotification = () => {
     if (open === false && likeProduct === false) {
       setMessage("Has afegit a preferits el producte.")
@@ -79,6 +86,19 @@ export default function Cortacesped() {
       setLikeProduct(false);
       setTimeout(function () {
         setOpen(false);
+      }, 5000);
+    }
+  };
+
+  const showNotificationCarrito = () => {
+    if (openCarrito === false && likeProductCarrito === false) {
+      setMessageCarrito("Has afegit al carret el producte.")
+      setPlaceCarrito("bc");
+      setColorCarrito("success");
+      setOpenCarrito(true);
+      setLikeProductCarrito(true);
+      setTimeout(function () {
+        setOpenCarrito(false);
       }, 5000);
     }
   };
@@ -159,10 +179,19 @@ export default function Cortacesped() {
                   closeNotification={() => setOpen(false)}
                   close
                 />
+                
+                <Button color="info" round onClick={() => showNotificationCarrito()}><span class="material-icons">shopping_cart</span> Afegir al carret</Button>
+                <Snackbar
+                  place={placeCarrito}
+                  color={colorCarrito}
+                  icon={AddAlert}
+                  message={messageCarrito}
+                  open={openCarrito}
+                  closeNotification={() => setOpenCarrito(false)}
+                  close
+                />
+                <Link  to={"/admin/cart"}>{<Button color="warning" round><span class="material-icons">done</span> Comprar </Button>}</Link>
 
-                <Button color="info" round><span class="material-icons">shopping_cart</span> Afegir al carret</Button>
-
-                <Button color="warning" round><span class="material-icons">done</span> Comprar </Button>
               </div>
 
               <div style={{ float: "left" }}>

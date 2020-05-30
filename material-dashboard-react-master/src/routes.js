@@ -18,18 +18,18 @@
 // @material-ui/icons
 
 import Dashboard from "@material-ui/icons/Dashboard";
-import Person from "@material-ui/icons/Person";
-import Notifications from "@material-ui/icons/Notifications";
+
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import Company from "views/Company/Company.js"
 import SingIn from "views/SingIn/SingIn.js" 
 import Cart from "views/Cart/Cart.js" 
 import SingUp from "views/SingUp/SingUp.js" 
-import UserProfile from "views/UserProfile/UserProfile.js";
 import HomePage from "views/HomePage/HomePage.js";
 import HomeIcon  from '@material-ui/icons/Home';
-import NotificationsPage from "views/Notifications/Notifications.js";
+import Premioum from "views/Premioum/Premioum.js";
+import Language from "@material-ui/icons/Language";
+import CheckOut from "views/Pagament/Checkout.js";
 
 //Products
 import TancaFusta from "views/Product/TancaFusta.js" 
@@ -43,6 +43,22 @@ const dashboardRoutes = [
     icon: HomeIcon,
     component: HomePage,
     layout: "/page"
+  },
+  {
+    path: "/checkOut",
+    name: "checkOut",
+    icon: HomeIcon,
+    component: CheckOut,
+    layout: "/page",
+    visible:false
+  },
+  {
+    path: "/premium",
+    name: "Prèmium",
+    
+    component: Premioum,
+    layout: "/page",
+    visible:false
   },
   {
     path: "/singIn", // url 
@@ -103,26 +119,12 @@ const dashboardRoutes = [
   },
   {
     path: "/company", // url 
-    name: "Company", // titol
-    icon: "", // icono
+    name: "About Us", // titol
+    icon: Language, // icono
     component: Company, // component
     layout: "/admin",
-    visible: false
+   
   },
-  {
-    path: "/user",
-    name: "User Profile",
-    icon: Person,
-    component: UserProfile,
-    layout: "/admin"
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin"
-  }
 ];
 
 export default dashboardRoutes;
