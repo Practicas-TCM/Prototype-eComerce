@@ -22,13 +22,17 @@ import Person from "@material-ui/icons/Person";
 import Notifications from "@material-ui/icons/Notifications";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
-import Product from "views/Product/Product.js" 
 import Company from "views/Company/Company.js"
 import LogIn from "views/LogIn/LogIn.js" 
 import UserProfile from "views/UserProfile/UserProfile.js";
 import HomePage from "views/HomePage/HomePage.js";
 import HomeIcon  from '@material-ui/icons/Home';
 import NotificationsPage from "views/Notifications/Notifications.js";
+
+//Products
+import TancaFusta from "views/Product/TancaFusta.js" 
+import Jardinera from "views/Product/Jardinera.js" 
+import Cortacesped from "views/Product/Cortacesped.js";
 
 const dashboardRoutes = [
   {
@@ -46,10 +50,26 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/product", // url
-    name: "Product", // titol
+    path: "/tancafusta", // url
+    name: "TancaFusta", // titol
     icon: "", // icono
-    component: Product, // 
+    component: TancaFusta, // 
+    layout: "/admin",
+    visible: false
+  },
+  {
+    path: "/jardinera", // url
+    name: "Jardinera", // titol
+    icon: "", // icono
+    component: Jardinera, // 
+    layout: "/admin",
+    visible: false
+  },
+  {
+    path: "/cortacesped", // url
+    name: "Cortacesped", // titol
+    icon: "", // icono
+    component: Cortacesped, // 
     layout: "/admin",
     visible: false
   },
