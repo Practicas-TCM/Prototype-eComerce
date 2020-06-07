@@ -107,9 +107,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                
-                
+                control={<Checkbox value="allowExtraEmails" color="primary" />} 
               />
               Accelto la
               <a style={{color:"blue"}} href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal"> politica de privacitat</a>
