@@ -78,7 +78,16 @@ export default function TancaFusta() {
         setOpen(false);
       }, 5000);
     }
-
+    else if (open === false && likeProduct === true) {
+      setMessage("Has retirat de preferits el producte.")
+      setPlace("bc");
+      setColor("warning");
+      setOpen(true);
+      setLikeProduct(false);
+      setTimeout(function () {
+        setOpen(false);
+      }, 5000);
+    }
   };
 
   const showNotificationCarrito = () => {
@@ -92,16 +101,7 @@ export default function TancaFusta() {
         setOpenCarrito(false);
       }, 5000);
     }
-    else if (openCarrito === false && likeProductCarrito === true) {
-      setMessageCarrito("Has retirat del carret el producte.")
-      setPlaceCarrito("bc");
-      setColorCarrito("warning");
-      setOpenCarrito(true);
-      setLikeProductCarrito(false);
-      setTimeout(function () {
-        setOpenCarrito(false);
-      }, 5000);
-    }
+  
   };
 
   const minusOneProduct = () => {

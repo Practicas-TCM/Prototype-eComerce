@@ -61,6 +61,7 @@ function getStepContent(step) {
       return <PaymentForm />;
     case 2:
       return <Review />;
+
     default:
       throw new Error('Unknown step');
   }
@@ -109,8 +110,18 @@ export default function Checkout() {
                 <Typography variant="subtitle1" style={{marginBottom:"100px"}}>
                   El seu número de compra és #2001539. Li hem enviat un correu amb la confirmació de la seva compra, i
                   l'anirem notificant l'estat del seu producte.
-                  
+                   
                 </Typography>
+                <a style={{ color: "white" }} href="http://localhost:3000/page/home">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleNext}
+                    className={classes.button}
+                  >
+                    Home
+              </Button></a>
+                
               </React.Fragment>
             ) : (
               <React.Fragment>

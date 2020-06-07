@@ -64,6 +64,8 @@ const tiers = [
     description: ['Unipersonal', 'No enviaments gratuits', 'Help center access', 'Email support'],
     buttonText: 'Registrar-se',
     buttonVariant: 'outlined',
+    color: "blue",
+    url: "http://localhost:3000/page/home",
   },
   {
     title: 'Pro',
@@ -75,8 +77,10 @@ const tiers = [
       'Enviament gratuit',
       'Temps entrega reduit',
     ],
-    buttonText: 'Comparar',
+    buttonText: 'Comprar',
     buttonVariant: 'contained',
+    color: "white",
+    url: "http://localhost:3000/page/checkOut",
   },
   {
     title: 'Empreses',
@@ -90,6 +94,8 @@ const tiers = [
     ],
     buttonText: 'Contactar amb nosaltres',
     buttonVariant: 'outlined',
+    color: "blue",
+    url: "http://localhost:3000/admin/company",
   },
 ];
 
@@ -143,7 +149,8 @@ export default function Pricing() {
                 </CardContent>
                 <CardActions>
                   <Button fullWidth variant={tier.buttonVariant} color="primary">
-                    {tier.buttonText}
+                  <a style={{color:tier.color}} href={tier.url}> {tier.buttonText}</a>
+                    
                   </Button>
                 </CardActions>
               </Card>
