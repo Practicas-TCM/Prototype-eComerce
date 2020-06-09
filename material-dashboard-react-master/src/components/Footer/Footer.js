@@ -18,10 +18,10 @@ export default function Footer(props) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <Link to={"/page/home"}>{"Home"}</Link>
+              <Link to={"/page/home"}>{"Pàgina principal"}</Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-            <Link to={"/admin/company"}>{"About us"}</Link>
+            <Link to={"/admin/company"}>{"Sobre nosaltres"}</Link>
             </ListItem>
           </List>
         </div>

@@ -30,10 +30,24 @@ export default function Company() {
                     </p>
                 </li>
                 <li type="square"><span style={{ fontWeight: "bolder" }}>PROPOSTA: </span> <span>eComerce</span> <br></br>
-                    <span>¿?¿?</span>
+                    <span>En aquest projecte, ens hem proposat el repte de dissenyar i desenvolupar una botiga online de bricolatge anomenada bricoCampus.com .</span>
+                    <span>La nostra botiga online consta de:</span>
+                    <ul>
+                        <li type="circle">Una pàgina principal amb diverses imatges d'alguns productes.</li>
+                        <li type="circle">Una pàgina que mostra els productes</li>
+                        <li type="circle">Cada producte té una pàgina amb la seva descripció i caracteristiques</li>
+                        <li type="circle">Una pàgina que mostra els productes que es vol comprar</li>
+                        <li type="circle">Una pàgina per realitzar el pagament</li>
+                        <li type="circle">Una pagina per registrar-se</li>
+                        <li type="circle">Una pàgina per accedir al teu perfil d'usuari</li>
+                        <li type="circle">Una pàgina per a que el usuari pugui fer-se prèmium.</li>
+                        <li type="circle">Una pàgina amb les ofertes del mes.</li>
+                        <li type="circle">Una pàgina amb els més venuts.</li>
+                        <li type="circle">Una pàgina amb els nous productes de la botiga.</li>
+                        <li type="circle">Una pàgina on s'explica qui sóm i que és aquest projecte.</li>
+                    </ul>                   
                 </li>
             </ul>
         </div>
-
     );
 }

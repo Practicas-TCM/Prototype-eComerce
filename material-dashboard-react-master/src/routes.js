@@ -11,16 +11,20 @@ import HomeIcon  from '@material-ui/icons/Home';
 import Premioum from "views/Premioum/Premioum.js";
 import Language from "@material-ui/icons/Language";
 import CheckOut from "views/Pagament/Checkout.js";
+import Ofertes from "views/Ofertes/Ofertes.js";
 
 //Products
 import TancaFusta from "views/Product/TancaFusta.js" 
 import Jardinera from "views/Product/Jardinera.js" 
 import Cortacesped from "views/Product/Cortacesped.js";
 
+import mesVenuts from "views/MesVenuts/MesVenuts.js";
+import nousProductes from "views/NousProductes/NousProductes.js";
+
 const dashboardRoutes = [
   {
     path: "/home",
-    name: "Homepage",
+    name: "Pàgina principal",
     icon: HomeIcon,
     component: HomePage,
     layout: "/page"
@@ -58,7 +62,7 @@ const dashboardRoutes = [
   },
   {
     path: "/products",
-    name: "Products",
+    name: "Productes",
     icon: Dashboard,
     component: DashboardPage,
     layout: "/admin"
@@ -99,11 +103,35 @@ const dashboardRoutes = [
   },
   {
     path: "/company", // url 
-    name: "About Us", // titol
+    name: "Sobre nosaltres ", // titol
     icon: Language, // icono
     component: Company, // component
     layout: "/admin",
    
+  },
+  {
+    path: "/ofertes", // url 
+    name: "Ofertes ", // titol
+    icon: Language, // icono
+    component: Ofertes, // component
+    layout: "/admin",
+    visible: false
+  },
+  {
+    path: "/mesVenuts", // url 
+    name: "venuts ", // titol
+    icon: Language, // icono
+    component: mesVenuts, // component
+    layout: "/admin",
+    visible: false   
+  },
+  {
+    path: "/nousProductes", // url 
+    name: "novetats ", // titol
+    icon: Language, // icono
+    component: nousProductes, // component
+    layout: "/admin",
+    visible: false
   },
 ];
 

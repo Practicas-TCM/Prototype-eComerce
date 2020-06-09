@@ -112,25 +112,26 @@ export default function AdminNavbarLinks() {
                     >
                       Productes recomenats per a tu
                     </MenuItem>
-                    <MenuItem
+                    <Link style={{color:"darkslategrey"}} to={"/admin/Ofertes"}>{<MenuItem
                       onClick={handleCloseNotification}
                       className={classes.dropdownItem}
                     >
                       Ofertes del mes
-                    </MenuItem>
-                    <MenuItem
+                      
+                    </MenuItem>}</Link>
+                    <Link style={{color:"darkslategrey"}} to={"/admin/mesVenuts"}>{
+                      <MenuItem
                       onClick={handleCloseNotification}
                       className={classes.dropdownItem}
                     >
                       Els més venuts
-                    </MenuItem>
-                    <MenuItem
+                    </MenuItem>}</Link>
+                    <Link style={{color:"darkslategrey"}} to={"/admin/nousProductes"}>{<MenuItem
                       onClick={handleCloseNotification}
                       className={classes.dropdownItem}
                     >
                       Nous productes
-                    </MenuItem>
-
+                    </MenuItem>}</Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
@@ -185,29 +186,29 @@ export default function AdminNavbarLinks() {
               <Paper>
                 <ClickAwayListener onClickAway={handleCloseProfile}>
                   <MenuList role="menu">
-                    <MenuItem
+                  <Link  to={"/page/singIn"}>{<MenuItem
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      <Link style={{ color: "black" }} to={"/page/singIn"}>{"Iniciar sessió"}</Link>
-                    </MenuItem>
+                      Iniciar sessió
+                  </MenuItem>}</Link>
 
-                    <MenuItem
+                  <Link to={"/page/singUp"}>{<MenuItem
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      <Link style={{ color: "black" }} to={"/page/singUp"}>{"Registrar-se"}</Link>
-                    </MenuItem>
+                      Registrar-se
+                    </MenuItem>}</Link>
 
-                    <MenuItem style={{ color: "black" }}
+                    <Link  to={"/page/premium"}>{<MenuItem 
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                     <Link style={{ color: "black" }} to={"/page/premium"}>{"Fer-se prèmium"}</Link>
-                    </MenuItem>
+                     Fer-se prèmium
+                    </MenuItem>}</Link>
                     <Divider light />
                     <MenuItem
-                    style={{ color: "black" }}
+                    
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
